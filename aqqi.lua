@@ -68,8 +68,8 @@ function wa_lua_on_handshake_cb(ctx)
         local port = ctx_address_port(ctx)
         
 
-        res = 'CONNECT ' .. host .. ':' .. port ..'@ndct-data.video.iqiyi.com HTTP/1.1\r\n' ..
-                    'Host: ndct-data.video.iqiyi.com\r\n' ..
+        res = 'CONNECT ' .. host .. ':' .. port ..'@gw.alicdn.com HTTP/1.1\r\n' ..
+                    'Host: gw.alicdn.com\r\n' ..
                     'Proxy-Connection: Keep-Alive\r\n'..
                     'X-T5-Auth: YTY0Nzlk\r\n' ..
                     'User-Agent: baiduboxapp\r\n\r\n'
@@ -113,7 +113,7 @@ function wa_lua_on_write_cb(ctx, buf)
 
             -- buf = sub(buf, 1, e) .. 
             buf = method .. ' http://' .. host .. ':' .. port .. sub(buf, index, e) ..
-            '@ndct-data.video.iqiyi.com\r\n'..
+            '@gw.alicdn.com\r\n'..
             'X-T5-Auth: YTY0Nzlk\r\n' ..
             'User-Agent: baiduboxapp\r\n' ..
             sub(buf, e + 1)
